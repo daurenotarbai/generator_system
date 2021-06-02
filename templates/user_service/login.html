@@ -1,0 +1,48 @@
+    {% extends "base.html" %}
+    {% load static %}
+
+    {% block title %}
+     Login
+    {% endblock title%}
+
+    {% block content%}
+            <div class="container">
+                <div class="row justify-content-md-center h-100 login-block">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Login</h4>
+                                <form method="POST" class="my-login-validation" novalidate="">
+                                {% csrf_token %}
+                                    {% for field in form %}
+                                        <div class="form-group">
+                                        <label for="email">{{field.name}}</label>
+                                            {{field}}
+                                        <div class="invalid-feedback">
+                                            {% if messages %}
+                                                <ul class="messages">
+                                                {% for message in messages %}
+                                                        <li class="{{ message.tags }}">
+                                                            {{ message|safe }}
+                                                        </li>
+                                                {% endfor %}
+                                                </ul>
+                                            {% endif %}
+                                        </div>
+                                        </div>
+                                    {% endfor %}
+                                    <div class="form-group m-0">
+                                        <button type="submit" class="btn btn-primary btn-block">
+                                            Login
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                </div>
+            </div>
+
+    {% endblock%}
+
+    </body>
+
+    </html>

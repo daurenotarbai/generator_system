@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Data sets
+{% endblock title %}
+
+{% block content %}
+    <div class="container">
+        <div class="schema-header row">
+            <div class="col-lg-8"><b>DATA SETS - {{ schema.schema_name }}</b></div>
+            <form class="col-lg-4 row" action="{% url 'generate_data' schema.id %}">
+                <div class="col-lg-6">
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Rows</label>
+                        <div class="col-sm-7">
+                            <input type="number" name="rows_number" value="500" class="form-control" id="inputEmail3"
+                                   placeholder="rows">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 generate-button">
+                    <button type="submit" class="btn btn-success">Generate Data</button>
+                    </a>
+                </div>
+            </form>
+        </div>
+
+        <table class="table">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Created</th>
+                <th scope="col">Status</th>
+                <th scope="col">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for item in query %}
+                <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td>{{ item.created_time }}</td>
+                    <td>{{ item.status }}</td>
+                    <td>
+                        <a href="/{{ item.csv_file }}">Download</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

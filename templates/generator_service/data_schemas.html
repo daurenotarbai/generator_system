@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Data Schema
+{% endblock title %}
+
+{% block content %}
+    <div class="container">
+        <div class="schema-header">
+            <span><b>DATA SCHEMAS</b> </span>
+            <a class="new-schema-button" href="{% url 'new_schema_views' %}">
+                <button type="button" class="btn btn-success">New Schema</button>
+            </a>
+        </div>
+        <table class="table">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Modified</th>
+                <th scope="col">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for item in query %}
+                <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td><a href="/data-sets/{{ item.id }}">{{ item.schema_name }}</a></td>
+                    <td>{{ item.updated_time }}</td>
+                    <td>
+                        <a href="{% url 'edit_schema_views' item.id %}">Edit scheme</a>
+                        <a class="delete-link" href="">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

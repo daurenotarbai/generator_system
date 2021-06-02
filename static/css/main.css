@@ -1,0 +1,39 @@
+body{
+    height: 100%;
+}
+.login-block{
+    margin-top: 100px;
+}
+.card-title{
+    text-align: center;
+}
+.card-title{
+    width: 300px;
+}
+.new-schema-button{
+    float: right;
+}
+.schema-header{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.delete-link {
+    color: red;
+    margin-left: 20px;
+}
+.table{
+    text-align: center;
+}
+
+.modal-content{
+    height: 160px;
+}
+.disabled{
+    display: none;
+}
+.column-item{
+    padding-bottom: 20px;
+}
+.generate-button{
+    float: left;
+}
