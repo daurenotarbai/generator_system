@@ -3,6 +3,7 @@ const nameInput = document.querySelector('#name_schema')
 const columnType = document.querySelector('#column_type')
 const intFromDiv = document.querySelector('.intFromDiv')
 const intToDiv = document.querySelector('.intToDiv')
+const sentencesNumberDiv = document.querySelector('.sentencesNumberDiv')
 const order = document.querySelector('#orderId')
 const intFrom = document.querySelector('#intFromId')
 const intTo = document.querySelector('#intToId')
@@ -11,14 +12,27 @@ const columnItem = document.querySelector('.column-item')
 const submitBtn = document.querySelector('#submit_btn')
 
 
-
+if(columnType.value=="full_name"){
+    intFromDiv.style.display = "none"
+    intToDiv.style.display = "none"
+    sentencesNumberDiv.style.display = "none"
+}
 
 columnType.addEventListener('change', () => {
-    if (columnType.value=="company"){
+    if (columnType.value!="int"){
         intFromDiv.style.display = "none"
         intToDiv.style.display = "none"
-        console.log("sds")
 }
+    else {
+        intFromDiv.style.display = "block"
+        intToDiv.style.display = "block"
+    }
+    if (columnType.value!="text"){
+        sentencesNumberDiv.style.display = "none"
+}
+    else {
+        sentencesNumberDiv.style.display = "block"
+    }
 })
 
 columnType.value
@@ -37,11 +51,7 @@ const addPerson = () => {
     }
 
     arr.push(data)
-    // column_list = []
-    // let loop = arr.map(item => {
-    //     column_list.push({"name":item.name,"columnType":item.columnType})
-    // })
-    // columnItems.value = column_list
+
     let mapped = arr.map(item => {
         return `
         <div class="row">
@@ -53,15 +63,15 @@ const addPerson = () => {
                     <label for="exampleFormControlSelect1">Column type</label>
                     <input class="form-control" value="${item.columnType}"  name="column_type" >
                 </div>
-                <div class="form-group col-lg-1 disabled">
+                <div class="form-group col-lg-1">
                     <label for="exampleFormControlSelect1">From</label>
                     <input type="number"  class="form-control" value="${item.intFrom}" name="int_from" >
                 </div>
-                <div class="form-group col-lg-1 disabled">
+                <div class="form-group col-lg-1">
                     <label for="exampleFormControlSelect1">To</label>
                     <input type="number"  class="form-control" value="${item.intTo}" name="int_to">
                 </div>
-                <div class="form-group col-lg-1 disabled"  >
+                <div class="form-group col-lg-1"  >
                     <label style="font-size: 8px" for="exampleFormControlSelect1">Sentences number</label>
                     <input type="number"  value="${item.sentencesNumber}" class="form-control" name="sentences_number">
                 </div>
@@ -74,7 +84,7 @@ const addPerson = () => {
     })
     columnItem.innerHTML = mapped.join('')
     nameInput.value = ""
-    order.value = order+1
+    order.value = order
 }
 
 

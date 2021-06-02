@@ -24,10 +24,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-cg4=q@6+#vy!$!&r=vg+y**hcgb_yj$_&2(sf75o^!!ier)q2l'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['gentle-retreat-25335.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = []
 
+# CELERY_TIMEZONE = "Australia/Tasmania"
+# CELERY_TASK_TRACK_STARTED = True
+# CELERY_TASK_TIME_LIMIT = 30 * 60
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
+CELERY_RESULT_BACKEND = 'django-db'
+
+    # 'redis://:p03fbce8b59134167e7e3acba5926e39ab444f35f3fb775967f439271188daccb@ec2-54-205-143-52.compute-1.amazonaws.com:6850'
 
 # Application definition
 
@@ -38,14 +45,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_celery_results',
     'generator_service',
     'user_service'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -54,7 +60,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
+# 'whitenoise.middleware.WhiteNoiseMiddleware',
 ROOT_URLCONF = 'generation_system.urls'
 
 TEMPLATES = [

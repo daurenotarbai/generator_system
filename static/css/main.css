@@ -13,9 +13,9 @@ body{
 .new-schema-button{
     float: right;
 }
-.schema-header{
-    padding-top: 20px;
-    padding-bottom: 20px;
+.schema-header {
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 .delete-link {
     color: red;
@@ -36,4 +36,8 @@ body{
 }
 .generate-button{
     float: left;
+}
+.column-header{
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
