@@ -20,44 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bee0425d-3e71-455a-a193-68d40f4e7176" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generation_system/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/generation_system/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generation_system/celery.py" beforeDir="false" afterPath="$PROJECT_DIR$/generation_system/celery.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/generation_system/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/generation_system/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generator_service/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/generator_service/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/2021-06-01/Students0.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/2021-06-01/Students1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/2021-06-01/Students2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/2021-06-02/Dauren0.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/2021-06-02/Dauren20.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/2021-06-02/Dauren30.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/2021-06-02/Students0.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/2021-06-02/Students1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/bootstrap-grid.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/bootstrap-grid.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/bootstrap-grid.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/bootstrap-grid.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/bootstrap-reboot.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/bootstrap-reboot.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/bootstrap-reboot.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/bootstrap-reboot.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/bootstrap.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/bootstrap.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/add_column.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/add_column.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/bootstrap.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/bootstrap.bundle.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/bootstrap.bundle.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/bootstrap.bundle.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/bootstrap.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/bootstrap.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/generator_service/new_schema.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/generator_service/new_schema.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +114,7 @@
       <workItem from="1622613379156" duration="125000" />
       <workItem from="1622613536406" duration="10886000" />
       <workItem from="1622629984298" duration="14741000" />
-      <workItem from="1622650215466" duration="2972000" />
+      <workItem from="1622650215466" duration="3832000" />
     </task>
     <servers />
   </component>

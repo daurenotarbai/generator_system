@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-cg4=q@6+#vy!$!&r=vg+y**hcgb_yj$_&2(sf75o^!!ier)q2l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['gentle-retreat-25335.herokuapp.com','127.0.0.1']
 
 # CELERY_TIMEZONE = "Australia/Tasmania"
 # CELERY_TASK_TRACK_STARTED = True
