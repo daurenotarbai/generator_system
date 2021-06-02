@@ -5,7 +5,8 @@ from faker import Faker
 from datetime import datetime
 from .forms import SchemaColumnsForm, SchemaBasicInfoForm
 from .tasks import write_to_csv
-    # , add
+from django.contrib.auth.decorators import login_required
+
 
 fake = Faker(['it_IT', 'en_US'])
 
@@ -13,7 +14,7 @@ fake = Faker(['it_IT', 'en_US'])
 def redirect_views(request):
     return redirect("/users/login")
 
-
+@login_required(login_url='/users/login/')
 def data_schemas_views(request):
     context = {}
     req_user = request.user
@@ -22,7 +23,7 @@ def data_schemas_views(request):
     context['query'] = query
     return render(request, "generator_service/data_schemas.html", context=context)
 
-
+@login_required(login_url='/users/login/')
 def new_schema_views(request):
     context = {}
     form_column_schema = SchemaColumnsForm()
@@ -35,7 +36,7 @@ def new_schema_views(request):
     context['form_basic_schema_info'] = form_basic_schema_info
     return render(request, "generator_service/new_schema.html", context=context)
 
-
+@login_required(login_url='/users/login/')
 def edit_schema_views(request, id):
     context = {}
     form_column_schema = SchemaColumnsForm()
@@ -50,7 +51,7 @@ def edit_schema_views(request, id):
     context['form_basic_schema_info'] = form_basic_schema_info
     return render(request, "generator_service/edit_schema.html", context=context)
 
-
+@login_required(login_url='/users/login/')
 def data_sets_views(request, id):
     context = {}
     req_user = request.user
