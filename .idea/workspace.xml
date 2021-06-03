@@ -20,34 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bee0425d-3e71-455a-a193-68d40f4e7176" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/generation_system/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/generation_system/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generator_service/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generator_service/migrations/0002_auto_20210529_1215.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generator_service/migrations/0003_alter_tbldatasets_status.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generator_service/migrations/0004_alter_tbldatasets_status.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generator_service/migrations/0005_alter_tblschemabasicinfo_columns.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generator_service/migrations/0006_alter_tblschemacolumns_column_type.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generator_service/migrations/0007_tblschemacolumns_sentences_number.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generator_service/migrations/0008_alter_tblschemacolumns_column_type.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generator_service/migrations/0009_tblschemabasicinfo_creator.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generator_service/migrations/0010_auto_20210529_2032.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generator_service/migrations/0011_alter_tblschemabasicinfo_string_character.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generator_service/migrations/0012_alter_tblschemabasicinfo_string_character.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generator_service/migrations/0013_alter_tblschemabasicinfo_string_character.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generator_service/migrations/0014_tblschemabasicinfo_updated_time.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generator_service/migrations/0015_tbldatasets_rows_number.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generator_service/migrations/0016_alter_tbldatasets_status.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generator_service/migrations/0017_alter_tbldatasets_csv_file.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generator_service/migrations/0018_auto_20210601_2351.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generator_service/migrations/0019_alter_tblschemacolumns_order.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generator_service/migrations/0020_tbldatasets_task_id.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generator_service/migrations/0021_tbldatasets_task_status.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generator_service/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/generator_service/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/2021-06-03/students0.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/2021-06-03/students1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/2021-06-03/students2.csv" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +114,7 @@
       <workItem from="1622613536406" duration="10886000" />
       <workItem from="1622629984298" duration="14741000" />
       <workItem from="1622650215466" duration="14036000" />
-      <workItem from="1622666395660" duration="12563000" />
+      <workItem from="1622666395660" duration="12888000" />
     </task>
     <servers />
   </component>
