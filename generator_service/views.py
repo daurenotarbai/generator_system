@@ -88,9 +88,8 @@ def data_sets_views(request, id):
 
 
 def updating_schema_views(request, id):
-    schema_name = str(request.POST.get("schema_name"))
+    schema_name = request.POST.get("schema_name")
     print("schema_name",schema_name)
-
     column_separator = request.POST.get("column_separator")
     string_character = request.POST.get("string_character")
 
@@ -176,12 +175,12 @@ def generate_data_views(request, id):
     number_of_datasets = models.TblDataSets.objects.filter(schema=schema).count()
     csv_file_path = folder_csv_file_path + '/' + schema.schema_name + str(number_of_datasets) + '.csv'
 
-    write_to_csv(csv_file_path,schema_id,rows_number)
+    data = write_to_csv.delay(csv_file_path,schema_id,rows_number)
 
     # print( write_to_csv.delay(csv_file_path,schema_id,rows_number))
-    # print(data.task_id)
+    print(data.task_id)
 
     dataset_model = models.TblDataSets(schema=schema, status="process", csv_file=csv_file_path,
-                                       rows_number=rows_number,task_id="data.task_id")
+                                       rows_number=rows_number,task_id=data.task_id)
     dataset_model.save()
     return redirect('/data-sets/' + str(schema.id))

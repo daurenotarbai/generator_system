@@ -54,9 +54,8 @@ def write_to_csv(self,csv_file_path,schema_id,rows_number):
         data.append(row)
 
     progress_recorder = ProgressRecorder(self)
-    # for i in range(5):
-    #     print("item",i)
-    #     progress_recorder.set_progress(i + 1,5,f'On iteration{i}')
+    for i in range(5):
+        progress_recorder.set_progress(i + 1,5,f'On iteration{i}')
 
     with open(csv_file_path, 'w', encoding='UTF8', newline='') as f:
         writer = csv.writer(f,
