@@ -175,7 +175,7 @@ def generate_data_views(request, id):
     number_of_datasets = models.TblDataSets.objects.filter(schema=schema).count()
     csv_file_path = folder_csv_file_path + '/' + schema.schema_name + str(number_of_datasets) + '.csv'
 
-    data = write_to_csv(csv_file_path,schema_id,rows_number)
+    write_to_csv(csv_file_path,schema_id,rows_number)
 
     # print( write_to_csv.delay(csv_file_path,schema_id,rows_number))
     # print(data.task_id)
