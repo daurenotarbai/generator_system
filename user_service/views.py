@@ -1,8 +1,8 @@
-
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
-from django.contrib.auth import login,logout,authenticate
+from django.contrib.auth import login, logout, authenticate
 from user_service.forms import UserLoginForm
+
 
 @csrf_exempt
 def login_view(request):
@@ -20,6 +20,7 @@ def login_view(request):
         token = Token.objects.create(user=user)
         print(token.key)
     return render(request, "user_service/login.html", {'form': form})
+
 
 def logout_user(request):
     logout(request)

@@ -26,13 +26,13 @@ SECRET_KEY = 'django-insecure-cg4=q@6+#vy!$!&r=vg+y**hcgb_yj$_&2(sf75o^!!ier)q2l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['gentle-retreat-25335.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['gentle-retreat-25335.herokuapp.com', '127.0.0.1']
 
 
 CELERY_BROKER_URL = 'redis://localhost:6379/0'
 CELERY_RESULT_BACKEND = 'django-db'
 #
-    # 'redis://:p03fbce8b59134167e7e3acba5926e39ab444f35f3fb775967f439271188daccb@ec2-54-205-143-52.compute-1.amazonaws.com:6850'
+# 'redis://:p03fbce8b59134167e7e3acba5926e39ab444f35f3fb775967f439271188daccb@ec2-54-205-143-52.compute-1.amazonaws.com:6850'
 
 # Application definition
 
@@ -64,12 +64,8 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'generation_system.urls'
 
 TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
-        ,
-        'APP_DIRS': True,
-        'OPTIONS': {
+    dict(BACKEND='django.template.backends.django.DjangoTemplates', DIRS=[os.path.join(BASE_DIR, 'templates')],
+         APP_DIRS=True, OPTIONS={
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
@@ -77,8 +73,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
             ],
-        },
-    },
+        }),
 ]
 
 WSGI_APPLICATION = 'generation_system.wsgi.application'

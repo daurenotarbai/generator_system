@@ -3,11 +3,12 @@ from celery import shared_task
 from celery_progress.backend import ProgressRecorder
 import csv
 from faker import Faker
+
 fake = Faker(['it_IT', 'en_US'])
 
-@shared_task(bind=True)
-def write_to_csv(self,csv_file_path,schema_id,rows_number):
 
+@shared_task(bind=True)
+def write_to_csv(self, csv_file_path, schema_id, rows_number):
     columns = models.TblSchemaColumns.objects.filter(schema__id=schema_id)
     schema = models.TblSchemaBasicInfo.objects.get(id=schema_id)
     print("columns", columns)
@@ -55,7 +56,7 @@ def write_to_csv(self,csv_file_path,schema_id,rows_number):
 
     progress_recorder = ProgressRecorder(self)
     for i in range(5):
-        progress_recorder.set_progress(i + 1,5,f'On iteration{i}')
+        progress_recorder.set_progress(i + 1, 5, f'On iteration{i}')
 
     with open(csv_file_path, 'w', encoding='UTF8', newline='') as f:
         writer = csv.writer(f,
@@ -65,6 +66,7 @@ def write_to_csv(self,csv_file_path,schema_id,rows_number):
         writer.writerow(header)
         writer.writerows(data)
     return "donee"
+
 
 def get_quotechar(string_character):
     if string_character == '"' or string_character == '"""':
@@ -80,6 +82,3 @@ def get_string(string_character, field):
     else:
         string = string_character + field + string_character
     return string
-
-
-

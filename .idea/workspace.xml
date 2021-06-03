@@ -20,8 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bee0425d-3e71-455a-a193-68d40f4e7176" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generation_system/celery.py" beforeDir="false" afterPath="$PROJECT_DIR$/generation_system/celery.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generation_system/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/generation_system/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generator_service/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/generator_service/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generator_service/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/generator_service/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generator_service/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/generator_service/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

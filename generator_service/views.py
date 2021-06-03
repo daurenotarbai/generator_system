@@ -54,11 +54,13 @@ def edit_schema_views(request, id):
     context['form_basic_schema_info'] = form_basic_schema_info
     return render(request, "generator_service/edit_schema.html", context=context)
 
+
 @login_required(login_url='/users/login/')
 def delete_schema_views(request, id):
     query = models.TblSchemaBasicInfo.objects.get(id=id)
     query.delete()
     return redirect('/data-schemas')
+
 
 @login_required(login_url='/users/login/')
 def data_sets_views(request, id):
@@ -73,23 +75,22 @@ def data_sets_views(request, id):
         except:
             task_status = "PENDING"
         item.task_status = task_status
-        if item.task_status=="SUCCESS":
+        if item.task_status == "SUCCESS":
             item.status = "ready"
         else:
             item.status = "on process"
         item.save()
 
-
     context['request_user'] = req_user
     context['query'] = query
     context['schema'] = schema
 
-    return render(request, "generator_service/data_sets.html", context=context)
+    return render(request, 'generator_service/data_sets.html', context=context)
 
 
 def updating_schema_views(request, id):
     schema_name = request.POST.get("schema_name")
-    print("schema_name",schema_name)
+    print("schema_name", schema_name)
     column_separator = request.POST.get("column_separator")
     string_character = request.POST.get("string_character")
 
@@ -175,12 +176,12 @@ def generate_data_views(request, id):
     number_of_datasets = models.TblDataSets.objects.filter(schema=schema).count()
     csv_file_path = folder_csv_file_path + '/' + schema.schema_name + str(number_of_datasets) + '.csv'
 
-    data = write_to_csv.delay(csv_file_path,schema_id,rows_number)
+    data = write_to_csv.delay(csv_file_path, schema_id, rows_number)
 
     # print( write_to_csv.delay(csv_file_path,schema_id,rows_number))
     print(data.task_id)
 
     dataset_model = models.TblDataSets(schema=schema, status="process", csv_file=csv_file_path,
-                                       rows_number=rows_number,task_id=data.task_id)
+                                       rows_number=rows_number, task_id=data.task_id)
     dataset_model.save()
     return redirect('/data-sets/' + str(schema.id))
