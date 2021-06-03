@@ -28,12 +28,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['gentle-retreat-25335.herokuapp.com','127.0.0.1']
 
-# CELERY_TIMEZONE = "Australia/Tasmania"
-# CELERY_TASK_TRACK_STARTED = True
-# CELERY_TASK_TIME_LIMIT = 30 * 60
-CELERY_BROKER_URL = 'redis://:p03fbce8b59134167e7e3acba5926e39ab444f35f3fb775967f439271188daccb@ec2-54-205-143-52.compute-1.amazonaws.com:6850'
+
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
 CELERY_RESULT_BACKEND = 'django-db'
-# 'redis://localhost:6379/0'
+#
     # 'redis://:p03fbce8b59134167e7e3acba5926e39ab444f35f3fb775967f439271188daccb@ec2-54-205-143-52.compute-1.amazonaws.com:6850'
 
 # Application definition
@@ -45,9 +43,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_celery_results',
     'generator_service',
-    'user_service'
+    'user_service',
+    'django_celery_results',
+    'celery_progress',
+
 ]
 
 MIDDLEWARE = [

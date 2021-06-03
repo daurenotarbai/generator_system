@@ -41,3 +41,8 @@ body{
     padding-top: 20px;
     padding-bottom: 20px;
 }
+
+.status_block{
+    color: white;
+    border-radius: 4px;
+}

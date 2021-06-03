@@ -22,6 +22,7 @@ urlpatterns = [
     path('data-schemas',views.data_schemas_views,name="data_schemas_views"),
     path('new-schema',views.new_schema_views,name="new_schema_views"),
     path('edit-schema/<int:id>/',views.edit_schema_views,name="edit_schema_views"),
+    path('delete-schema/<int:id>/',views.delete_schema_views,name="delete_schema_views"),
     path('add-schema',views.adding_new_schema_views,name="adding_new_schema_views"),
     path('update-schema/<int:id>',views.updating_schema_views,name="updating_schema_views"),
     path('data-sets/<int:id>',views.data_sets_views,name="data_sets_views"),

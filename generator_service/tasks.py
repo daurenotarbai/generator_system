@@ -1,11 +1,13 @@
 from . import models
 from celery import shared_task
+from celery_progress.backend import ProgressRecorder
 import csv
 from faker import Faker
 fake = Faker(['it_IT', 'en_US'])
 
-@shared_task
-def write_to_csv(csv_file_path,schema_id,rows_number):
+@shared_task(bind=True)
+def write_to_csv(self,csv_file_path,schema_id,rows_number):
+
     columns = models.TblSchemaColumns.objects.filter(schema__id=schema_id)
     schema = models.TblSchemaBasicInfo.objects.get(id=schema_id)
     print("columns", columns)
@@ -50,6 +52,12 @@ def write_to_csv(csv_file_path,schema_id,rows_number):
                 field = fake.date()
                 row.append(field)
         data.append(row)
+
+    progress_recorder = ProgressRecorder(self)
+    # for i in range(5):
+    #     print("item",i)
+    #     progress_recorder.set_progress(i + 1,5,f'On iteration{i}')
+
     with open(csv_file_path, 'w', encoding='UTF8', newline='') as f:
         writer = csv.writer(f,
                             delimiter=schema.column_separator,

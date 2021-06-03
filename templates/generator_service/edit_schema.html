@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-    Edit Schema
+    New Schema
 {% endblock title %}
 
 {% block content %}
@@ -10,13 +10,13 @@
         <form method="POST" action="{% url 'updating_schema_views' query.id %}" class="">
             {% csrf_token %}
             <div class="schema-header">
-                <span><b>New Scheme</b> </span>
+                <span><h5><b>New Scheme</b></h5> </span>
                 <button type="submit" class="new-schema-button btn btn-primary">Save</button>
             </div>
             <div class="row">
                 <div class="form-group col-lg-7">
                     <label for="exampleInputEmail1">Name</label>
-                    <input type="text" value="{{ query.schema_name }}" name="schema_name" class="form-control" id="nameNewSchema"
+                    <input type="text" name="schema_name" class="form-control" value="{{ query.schema_name }}" id="nameNewSchema"
                            aria-describedby="emailHelp" placeholder="name">
                 </div>
                 <div class="form-group col-lg-7">
@@ -25,7 +25,6 @@
                         {% for x,y in form_basic_schema_info.fields.column_separator.choices %}
                             <option value="{{ x }}"{% if form_basic_schema_info.fields.column_separator.value == x %}
                                     selected{% endif %}>{{ y }}</option>
-
                         {% endfor %}
                     </select>
                 </div>
@@ -39,42 +38,44 @@
                     </select>
                 </div>
             </div>
-            <div class="schema-header">
-                <span><b>Schema Columns</b> </span>
+            <div class="column-header">
+                <span><h5><b>Schema Columns</b></h5> </span>
+
             </div>
-            <div class="column-item">
-                {% for column in columns %}
+        {% for item in columns %}
                 <div class="row">
-                    <div class="form-group col-lg-3">
-                        <label for="exampleInputEmail1">Name</label>
-                        <input class="form-control" value="{{ column.column_name }}" name="name_column">
-                    </div>
-                    <div class="form-group col-lg-3">
-                        <label for="exampleFormControlSelect1">Column type</label>
-                        <input class="form-control" value="{{ column.column_type }}" name="column_type">
-                    </div>
-                    <div class="form-group col-lg-1 ">
-                        <label for="exampleFormControlSelect1">From</label>
-                        <input type="number" class="form-control" value="{{ column.int_from }}" name="int_from">
-                    </div>
-                    <div class="form-group col-lg-1 ">
-                        <label for="exampleFormControlSelect1">To</label>
-                        <input type="number" class="form-control" value="{{ column.int_to }}" name="int_to">
-                    </div>
-                    <div class="form-group col-lg-1 ">
-                        <label style="font-size: 8px" for="exampleFormControlSelect1">Sentences number</label>
-                        <input type="number" value="{{ column.sentences_number }}" class="form-control"
-                               name="sentences_number">
-                    </div>
-                    <div class="form-group col-lg-3">
-                        <label for="exampleInputEmail1">Order</label>
-                        <input type="number" value="{{ column.order }}" class="form-control" name="order">
-                    </div>
+              <div class="form-group col-lg-3">
+                <label for="exampleInputEmail1">Name</label>
+                <input class="form-control"  value="{{item.column_name}}"  name="name_column">
+              </div>
+                <div class="form-group col-lg-3">
+                    <label for="exampleFormControlSelect1">Column type</label>
+                    <input class="form-control" value="{{item.column_type}}"  name="column_type" >
                 </div>
-                {% endfor %}
+                <div class="form-group col-lg-1">
+                    <label for="exampleFormControlSelect1">From</label>
+                    <input type="number"  class="form-control" value="{{item.int_from}}" name="int_from" >
+                </div>
+                <div class="form-group col-lg-1">
+                    <label for="exampleFormControlSelect1">To</label>
+                    <input type="number"  class="form-control" value="{{item.int_to}}" name="int_to">
+                </div>
+                <div class="form-group col-lg-1"  >
+                    <label style="font-size: 8px" for="exampleFormControlSelect1">Sentences number</label>
+                    <input type="number"  value="{{item.sentences_number}}" class="form-control" name="sentences_number">
+                </div>
+                <div class="form-group col-lg-3">
+                <label for="exampleInputEmail1">Order</label>
+                <input type="number"  value="{{item.order}}" class="form-control" name="order">
+                </div>
+            </div>
+            {% endfor %}
+            <div class="column-item">
+
             </div>
         </form>
-        <div class="schema-header modal-content">
+
+        <div class="column-header modal-content">
             <div class="container">
                 <div class="row">
                     <div class="form-group col-lg-3">
@@ -98,7 +99,7 @@
                         <label for="exampleFormControlSelect1">To</label>
                         <input type="number" class="form-control" id="intToId" value="10">
                     </div>
-                    <div class="form-group col-lg-1 ">
+                    <div class="form-group col-lg-1 sentencesNumberDiv">
                         <label style="font-size: 8px" for="exampleFormControlSelect1">Sentences number</label>
                         <input type="number" class="form-control" id="sentencesNumber" value="5">
                     </div>
@@ -111,6 +112,7 @@
             </div>
 
         </div>
+
 
     </div>
 {% endblock %}

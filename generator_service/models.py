@@ -74,6 +74,8 @@ class TblDataSets(models.Model):
     status = models.CharField(max_length=11,choices=STATUS_CHOICES,default="process" )
     csv_file = models.CharField(max_length=300, default='', null=True)
     rows_number = models.PositiveIntegerField(default=0, null=True)
+    task_id = models.CharField(max_length=300, default='', null=True)
+    task_status = models.CharField(max_length=40, default='', null=True)
     created_time = models.DateTimeField(auto_now_add=True, auto_now=False)
 
     class Meta:

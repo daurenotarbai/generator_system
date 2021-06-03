@@ -40,10 +40,16 @@
                 <tr>
                     <th scope="row">{{ forloop.counter }}</th>
                     <td>{{ item.created_time }}</td>
-                    <td>{{ item.status }}</td>
+                    <td><div style=" background:  #28a745 ;" class="status_block">ready</div></td>
                     <td>
-                        <a href="/{{ item.csv_file }}">Download</a>
+{#                        {% if item.task_status == "SUCCESS" %}#}
+                            <a href="/{{ item.csv_file }}">Download</a>
+{#                        {% else %}#}
+{#                            <a href="">Reload</a>#}
+{#                        {% endif %}#}
+
                     </td>
+
                 </tr>
             {% endfor %}
             </tbody>

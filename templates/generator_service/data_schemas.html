@@ -30,7 +30,7 @@
                     <td>{{ item.updated_time }}</td>
                     <td>
                         <a href="{% url 'edit_schema_views' item.id %}">Edit scheme</a>
-                        <a class="delete-link" href="">Delete</a>
+                        <a class="delete-link" href="{% url 'delete_schema_views' item.id %}">Delete</a>
                     </td>
                 </tr>
             {% endfor %}
