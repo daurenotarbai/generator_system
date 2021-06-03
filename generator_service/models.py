@@ -17,7 +17,7 @@ STRING_CHARACTER_CHOICES = (
 )
 
 class TblSchemaBasicInfo(models.Model):
-    schema_name = models.CharField(max_length=20, default='', null=True)
+    schema_name = models.CharField(max_length=20, null=True)
     column_separator = models.CharField(max_length=15,choices=SEPARATOR_CHOICES,default=";")
     string_character = models.CharField(max_length=15,choices=STRING_CHARACTER_CHOICES,default="'")
     creator = models.ForeignKey(User, on_delete = models.CASCADE, null=True)

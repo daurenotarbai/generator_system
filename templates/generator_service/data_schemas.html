@@ -29,7 +29,7 @@
                     <td><a href="/data-sets/{{ item.id }}">{{ item.schema_name }}</a></td>
                     <td>{{ item.updated_time }}</td>
                     <td>
-                        <a href="{% url 'edit_schema_views' item.id %}">Edit scheme</a>
+{#                        <a href="{% url 'edit_schema_views' item.id %}">Edit scheme</a>#}
                         <a class="delete-link" href="{% url 'delete_schema_views' item.id %}">Delete</a>
                     </td>
                 </tr>

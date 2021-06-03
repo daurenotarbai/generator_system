@@ -20,7 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bee0425d-3e71-455a-a193-68d40f4e7176" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/generation_system/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/generation_system/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generator_service/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/generator_service/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generator_service/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/generator_service/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/generator_service/data_schemas.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/generator_service/data_schemas.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +118,7 @@
       <workItem from="1622613536406" duration="10886000" />
       <workItem from="1622629984298" duration="14741000" />
       <workItem from="1622650215466" duration="14036000" />
-      <workItem from="1622666395660" duration="12888000" />
+      <workItem from="1622666395660" duration="14098000" />
     </task>
     <servers />
   </component>

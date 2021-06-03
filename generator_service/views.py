@@ -88,8 +88,9 @@ def data_sets_views(request, id):
 
 
 def updating_schema_views(request, id):
-    schema_name = request.POST.get("schema_name")
+    schema_name = str(request.POST.get("schema_name"))
     print("schema_name",schema_name)
+
     column_separator = request.POST.get("column_separator")
     string_character = request.POST.get("string_character")
 
