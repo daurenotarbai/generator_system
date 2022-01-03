@@ -18,7 +18,7 @@ Run the project
 ```
 python manage.py runserver
 ```
-Run the redis
+Run the redis for celery
 
 ```
 docker-compose up -d
