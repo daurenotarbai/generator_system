@@ -1,4 +1,4 @@
-STEP 1
+## Online service for generating CSV-files with fake (dummy) data
 
 python manage.py runserver (to run the web project)
 
